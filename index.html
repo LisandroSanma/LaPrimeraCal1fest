@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎂 Calíope - Mi primer añito 💚</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎂 Los invito a la Califest 💚</title>
 
-  <!-- MINIATURA -->
-  <link rel="icon" type="image/jpeg" href="https://lisandrosanma.github.io/LaPrimeraCal1fest/Miniatura.jpg">
+  <!-- Miniatura -->
+  <link rel="icon" type="image/jpeg" href="Miniatura.jpg" />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="🎂 Calíope - Mi primer añito 💚">
-  <meta property="og:description" content="Quiero que compartas un momento junto a nosotros 💚🎂">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lisandrosanma.github.io/LaPrimeraCal1fest/">
-  <meta property="og:image" content="https://lisandrosanma.github.io/LaPrimeraCal1fest/Miniatura.jpg">
-  <meta property="og:image:width" content="800">
-  <meta property="og:image:height" content="800">
+  <!-- Open Graph -->
+  <meta property="og:title" content="🎂 Los invito a la Califest 💚" />
+  <meta property="og:description" content="¡Te espero para festejar mi primer añito!" />
+  <meta property="og:image" content="Miniatura.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lisandrosanma.github.io/LaPrimeraCal1fest/" />
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="🎂 Calíope - Mi primer añito 💚">
-  <meta name="twitter:description" content="Quiero que compartas un momento junto a nosotros 💚🎂">
-  <meta name="twitter:image" content="https://lisandrosanma.github.io/LaPrimeraCal1fest/Miniatura.jpg">
-
+  <!-- Fuente Comic Sans -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Comic Sans MS', 'Comic Neue', cursive;
       background: linear-gradient(180deg, #c8f5df, #f4fffa);
       color: #2d7a5b;
       margin: 0;
       text-align: center;
       padding: 20px;
-      overflow-x: hidden;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
       position: relative;
     }
 
@@ -53,7 +43,7 @@
 
     p {
       font-size: 1.2em;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       animation: fadeIn 2s ease-in;
     }
 
@@ -62,26 +52,21 @@
       to { opacity: 1; }
     }
 
-    img {
+    img#foto-bebe {
       width: 80%;
-      max-width: 350px;
+      max-width: 320px;
       border-radius: 50%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       margin-top: 10px;
       cursor: pointer;
-      transition: transform 0.5s ease;
-      z-index: 2;
+      transition: transform 0.5s ease-in-out;
     }
 
-    img:hover {
-      transform: scale(1.05);
+    img#foto-bebe.girando {
+      animation: girar 3s linear infinite;
     }
 
-    .spin {
-      animation: spin 3s linear infinite;
-    }
-
-    @keyframes spin {
+    @keyframes girar {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
@@ -104,7 +89,7 @@
       border-radius: 15px;
       cursor: pointer;
       transition: transform 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       width: 80%;
       max-width: 300px;
     }
@@ -113,80 +98,78 @@
       transform: scale(1.05);
     }
 
-    /* FLORES DE FONDO */
+    /* 🌸 FLORES DE FONDO */
     .flower {
       position: absolute;
-      width: 70px;
-      opacity: 0.6;
-      animation: float 14s infinite ease-in-out;
-      z-index: 1;
+      width: 80px;
+      opacity: 0.7;
+      animation: float 12s infinite ease-in-out;
+      z-index: 0;
     }
 
     @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0.5; }
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0.4; }
       50% { opacity: 1; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity: 0.3; }
     }
 
     .flower:nth-child(1) { left: 5%; animation-delay: 0s; }
-    .flower:nth-child(2) { left: 15%; animation-delay: 2s; }
-    .flower:nth-child(3) { left: 35%; animation-delay: 4s; }
-    .flower:nth-child(4) { left: 55%; animation-delay: 6s; }
-    .flower:nth-child(5) { left: 75%; animation-delay: 8s; }
-    .flower:nth-child(6) { left: 85%; animation-delay: 10s; }
-    .flower:nth-child(7) { left: 95%; animation-delay: 12s; }
+    .flower:nth-child(2) { left: 20%; animation-delay: 2s; }
+    .flower:nth-child(3) { left: 40%; animation-delay: 4s; }
+    .flower:nth-child(4) { left: 60%; animation-delay: 6s; }
+    .flower:nth-child(5) { left: 80%; animation-delay: 8s; }
+    .flower:nth-child(6) { left: 10%; animation-delay: 1s; }
+    .flower:nth-child(7) { left: 30%; animation-delay: 3s; }
+    .flower:nth-child(8) { left: 70%; animation-delay: 5s; }
+    .flower:nth-child(9) { left: 90%; animation-delay: 7s; }
   </style>
 </head>
 
 <body>
-  <!-- FLORES -->
-  <img class="flower" src="flores/Flor1.png" alt="Flor">
-  <img class="flower" src="flores/Flor2.png" alt="Flor">
-  <img class="flower" src="flores/Flor3.png" alt="Flor">
-  <img class="flower" src="flores/Flor4.png" alt="Flor">
-  <img class="flower" src="flores/Flor5.png" alt="Flor">
-  <img class="flower" src="flores/Flor3.png" alt="Flor extra">
-  <img class="flower" src="flores/Flor2.png" alt="Flor extra">
+  <!-- 🌼 FLORES -->
+  <img class="flower" src="flores/Flor1.png" alt="Flor" />
+  <img class="flower" src="flores/Flor2.png" alt="Flor" />
+  <img class="flower" src="flores/Flor3.png" alt="Flor" />
+  <img class="flower" src="flores/Flor4.png" alt="Flor" />
+  <img class="flower" src="flores/Flor5.png" alt="Flor" />
+  <img class="flower" src="flores/Flor1.png" alt="Flor" />
+  <img class="flower" src="flores/Flor2.png" alt="Flor" />
+  <img class="flower" src="flores/Flor3.png" alt="Flor" />
+  <img class="flower" src="flores/Flor4.png" alt="Flor" />
 
   <h1>🎂 Los invito a la Califest 💚</h1>
   <p>¡Te espero para festejar mi primer añito!</p>
 
-  <img id="foto-bebe" src="foto_bebe.jpg" alt="Calíope">
+  <img id="foto-bebe" src="foto_bebe.jpg" alt="Calíope" />
 
   <p><strong>Soy la bebé más guarachera, si no me creés...</strong><br>¡tocá mi foto! 💃</p>
 
   <div class="buttons">
     <button onclick="window.open('https://maps.google.com/?q=-34.8557038,-58.3888914','_blank')">📍 Cómo llegar</button>
     <button onclick="window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumple+de+Calíope&dates=20251206T160000Z/20251206T190000Z&details=Primer+añito+en+Tano+Eventos&location=Tano+Eventos','_blank')">📅 Guardar fecha</button>
-    <button id="confirmar-btn" onclick="window.open('https://wa.me/5491156637770?text=Confirmo%20asistencia%20al%20cumple%20de%20Calíope','_blank')">💬 Confirmar asistencia</button>
+    <button onclick="confirmarAsistencia()">💬 Confirmar asistencia</button>
   </div>
 
   <audio id="bg-music" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
   <script>
-    const foto = document.getElementById('foto-bebe');
-    const audio = document.getElementById('bg-music');
-    const confirmar = document.getElementById('confirmar-btn');
+    const foto = document.getElementById("foto-bebe");
+    const audio = document.getElementById("bg-music");
 
-    foto.addEventListener('click', () => {
+    foto.addEventListener("click", () => {
       audio.play();
-      foto.classList.add('spin');
+      foto.classList.add("girando");
     });
 
-    audio.addEventListener('pause', () => {
-      foto.classList.remove('spin');
-    });
-
-    confirmar.addEventListener('click', () => {
-      setTimeout(() => alert('💚 ¡Nos vemos en la Califest! 🎂'), 3000);
-    });
+    function confirmarAsistencia() {
+      alert("Gracias por confirmar, los esperamos 💚");
+      window.open("https://wa.me/5491156637770?text=Confirmo%20asistencia%20al%20cumple%20de%20Cal%C3%ADope%20el%206%20de%20diciembre%20en%20Tano%20Eventos%20🎂", "_blank");
+    }
   </script>
 </body>
 </html>
-
-
 
 
 
