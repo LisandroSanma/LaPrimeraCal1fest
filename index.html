@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎂 Calíope - Mi primer añito 💚</title>
 
-  <!-- Ícono y miniatura -->
+  <!-- MINIATURA -->
   <link rel="icon" type="image/jpeg" href="https://lisandrosanma.github.io/LaPrimeraCal1fest/Miniatura.jpg">
 
-  <!-- 🪩 Open Graph (Facebook, WhatsApp, etc.) -->
+  <!-- OPEN GRAPH -->
   <meta property="og:title" content="🎂 Calíope - Mi primer añito 💚">
   <meta property="og:description" content="Quiero que compartas un momento junto a nosotros 💚🎂">
   <meta property="og:type" content="website">
@@ -18,18 +17,15 @@
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
 
-  <!-- 💬 Twitter / X -->
+  <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="🎂 Calíope - Mi primer añito 💚">
   <meta name="twitter:description" content="Quiero que compartas un momento junto a nosotros 💚🎂">
   <meta name="twitter:image" content="https://lisandrosanma.github.io/LaPrimeraCal1fest/Miniatura.jpg">
 
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
-</head>
-
   <style>
     body {
-      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       background: linear-gradient(180deg, #c8f5df, #f4fffa);
       color: #2d7a5b;
       margin: 0;
@@ -57,7 +53,7 @@
 
     p {
       font-size: 1.2em;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       animation: fadeIn 2s ease-in;
     }
 
@@ -66,19 +62,23 @@
       to { opacity: 1; }
     }
 
-    img#foto-bebe {
+    img {
       width: 80%;
       max-width: 350px;
       border-radius: 50%;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      margin-top: 15px;
+      margin-top: 10px;
       cursor: pointer;
       transition: transform 0.5s ease;
       z-index: 2;
     }
 
-    img#foto-bebe.spin {
-      animation: spin 4s linear infinite;
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .spin {
+      animation: spin 3s linear infinite;
     }
 
     @keyframes spin {
@@ -116,9 +116,9 @@
     /* FLORES DE FONDO */
     .flower {
       position: absolute;
-      width: 80px;
-      opacity: 0.7;
-      animation: float 12s infinite ease-in-out;
+      width: 70px;
+      opacity: 0.6;
+      animation: float 14s infinite ease-in-out;
       z-index: 1;
     }
 
@@ -129,31 +129,31 @@
     }
 
     .flower:nth-child(1) { left: 5%; animation-delay: 0s; }
-    .flower:nth-child(2) { left: 15%; animation-delay: 1s; }
-    .flower:nth-child(3) { left: 30%; animation-delay: 2s; }
-    .flower:nth-child(4) { left: 50%; animation-delay: 3s; }
-    .flower:nth-child(5) { left: 65%; animation-delay: 4s; }
-    .flower:nth-child(6) { left: 75%; animation-delay: 5s; }
-    .flower:nth-child(7) { left: 85%; animation-delay: 6s; }
+    .flower:nth-child(2) { left: 15%; animation-delay: 2s; }
+    .flower:nth-child(3) { left: 35%; animation-delay: 4s; }
+    .flower:nth-child(4) { left: 55%; animation-delay: 6s; }
+    .flower:nth-child(5) { left: 75%; animation-delay: 8s; }
+    .flower:nth-child(6) { left: 85%; animation-delay: 10s; }
+    .flower:nth-child(7) { left: 95%; animation-delay: 12s; }
   </style>
 </head>
 
 <body>
-
-  <!-- Flores de fondo -->
+  <!-- FLORES -->
   <img class="flower" src="flores/Flor1.png" alt="Flor">
   <img class="flower" src="flores/Flor2.png" alt="Flor">
   <img class="flower" src="flores/Flor3.png" alt="Flor">
   <img class="flower" src="flores/Flor4.png" alt="Flor">
   <img class="flower" src="flores/Flor5.png" alt="Flor">
-  <img class="flower" src="flores/Flor1.png" alt="Flor">
-  <img class="flower" src="flores/Flor2.png" alt="Flor">
+  <img class="flower" src="flores/Flor3.png" alt="Flor extra">
+  <img class="flower" src="flores/Flor2.png" alt="Flor extra">
 
-  <h1>🎂Los invito a la Califest 💚</h1>
+  <h1>🎂 Los invito a la Califest 💚</h1>
   <p>¡Te espero para festejar mi primer añito!</p>
 
   <img id="foto-bebe" src="foto_bebe.jpg" alt="Calíope">
-  <p>Soy la bebé más guarachera, si no me creés...<br>¡tocá mi foto! 💃</p>
+
+  <p><strong>Soy la bebé más guarachera, si no me creés...</strong><br>¡tocá mi foto! 💃</p>
 
   <div class="buttons">
     <button onclick="window.open('https://maps.google.com/?q=-34.8557038,-58.3888914','_blank')">📍 Cómo llegar</button>
@@ -172,15 +172,20 @@
 
     foto.addEventListener('click', () => {
       audio.play();
-      foto.classList.add('spin'); // hace girar la foto como vinilo
+      foto.classList.add('spin');
+    });
+
+    audio.addEventListener('pause', () => {
+      foto.classList.remove('spin');
     });
 
     confirmar.addEventListener('click', () => {
-      setTimeout(() => alert('¡Nos vemos en la Califest! 🎂💚'), 3000);
+      setTimeout(() => alert('💚 ¡Nos vemos en la Califest! 🎂'), 3000);
     });
   </script>
 </body>
 </html>
+
 
 
 
